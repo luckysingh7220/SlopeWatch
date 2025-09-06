@@ -27,13 +27,25 @@ export default function About() {
           and timely alerts.
         </p>
 
-        <p className="text-gray-700 leading-relaxed">
+        <p className="text-gray-700 leading-relaxed mb-6">
           Built with modern web technologies including{" "}
           <span className="font-semibold">React, TailwindCSS, Leaflet</span> for interactive maps, 
           and <span className="font-semibold">Recharts</span> for data visualization, this prototype 
           demonstrates how digital solutions can play a key role in{" "}
           <span className="font-medium">sustainable and safe mining practices</span>.
         </p>
+
+        {/* Know More Button */}
+        <div className="text-center">
+          <a
+            href="https://github.com/Virtual-box-KA/SIH-2025"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-6 py-2 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition"
+          >
+            🔗 Know More
+          </a>
+        </div>
       </div>
     </div>
   );
