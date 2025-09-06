@@ -1,35 +1,37 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
-function App() {
-  const [count, setCount] = useState(0)
-
+// src/App.jsx
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import MapPage from "./pages/MapPage";
+import DashboardPage from "./pages/DashboardPage";
+import Alerts from "./pages/Alerts";
+import Trends from "./pages/Trends";
+import About from "./pages/About";
+import Navbar from "./assets/layout/Navbar"; // imported
+import HomePage from "./pages/HomePage";
+export default function App() {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <Router>
+      <div className="min-h-screen flex flex-col">
+        {/* Navbar */}
+        <Navbar />
 
-export default App
+        {/* Routes */}
+        <main className="flex-1">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/map" element={<MapPage />} />
+            <Route path="/dashboard" element={<DashboardPage />} />
+            <Route path="/alerts" element={<Alerts />} />
+            <Route path="/trends" element={<Trends />} />
+            <Route path="/about" element={<About />} />
+          </Routes>
+        </main>
+
+        {/* Footer */}
+        <footer className="bg-gray-100 text-center py-3 text-sm text-gray-600">
+          &copy; {new Date().getFullYear()} Rockfall Prediction System
+        </footer>
+      </div>
+    </Router>
+  );
+}
