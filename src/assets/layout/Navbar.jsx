@@ -1,7 +1,6 @@
 // src/Layout/Navbar.jsx
 import React from "react";
 import { Link } from "react-router-dom";
-
 export default function Navbar() {
   return (
     <header className="bg-gradient-to-r from-gray-900 via-indigo-900 to-blue-900 sticky top-0 z-50 text-white px-6 py-4 flex justify-between items-center shadow-md">
@@ -23,6 +22,11 @@ export default function Navbar() {
           className="hover:text-yellow-400 cursor-pointer transition duration-200"
         >
           Map
+        </Link>
+        <Link to="/contour"
+        className="hover:text-yellow-400 cursor-pointer transition duration-200"
+        >
+        Contour
         </Link>
         <Link
           to="/dashboard"

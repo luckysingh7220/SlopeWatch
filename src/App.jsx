@@ -8,6 +8,7 @@ import Trends from "./pages/Trends";
 import About from "./pages/About";
 import Navbar from "./assets/layout/Navbar"; // imported
 import HomePage from "./pages/HomePage";
+import RockfallContour from "./components/Contour3D";
 export default function App() {
   return (
     <Router>
@@ -24,6 +25,7 @@ export default function App() {
             <Route path="/alerts" element={<Alerts />} />
             <Route path="/trends" element={<Trends />} />
             <Route path="/about" element={<About />} />
+            <Route path="/contour" element={<RockfallContour />} />
           </Routes>
         </main>
 
